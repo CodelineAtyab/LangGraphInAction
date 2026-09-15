@@ -1,0 +1,47 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Python virtual environments / caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+htmlcov/
+.coverage
+.coverage.*
+
+# Local data / state
+.langgraph_api/
+.langgraph/
+checkpoints.db
+*.sqlite
+*.sqlite3
+
+# Secrets / local env
+.env
+.env.*
+!.env.example
+
+# Docs / editors / OS
+README*
+docs/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# CI
+.github/
