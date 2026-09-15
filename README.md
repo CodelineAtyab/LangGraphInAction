@@ -130,10 +130,16 @@ uv run python -m app.worker
 
 ## Development
 
-Install dev dependencies and run checks:
+Dev tooling (ruff, mypy) lives in the uv `dev` dependency group, which is installed
+by default with `uv sync`. Production installs must exclude it:
 
 ```bash
-uv sync --all-extras
+uv sync --frozen --no-dev
+```
+
+Run checks locally:
+
+```bash
 uv run ruff check .
 uv run ruff format .
 uv run mypy .
@@ -146,6 +152,12 @@ Build and run the full stack:
 
 ```bash
 docker compose up --build
+```
+
+Production images should install runtime dependencies only:
+
+```dockerfile
+RUN uv sync --frozen --no-dev
 ```
 
 ## License
